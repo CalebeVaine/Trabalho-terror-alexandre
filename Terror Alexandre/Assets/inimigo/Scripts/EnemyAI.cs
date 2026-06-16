@@ -4,20 +4,19 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public enum State { Patrol, Chase, Investigate, Search }
-    public State state = State.Patrol;
+    public State state;
 
     [Header("References")]
     public Transform player;
-    public NavMeshAgent agent;
     public Transform[] patrolPoints;
-    public AudioSource footstepAudio;
-    public JumpscareController jumpscareManager;
+    public AudioSource footsteps;
+    public JumpscareController jumpscare;
+    public NavMeshAgent agent;
 
     [Header("Vision")]
     public float viewDistance = 12f;
     public float viewAngle = 100f;
-    public LayerMask visionMask;
-    public LayerMask obstacleMask;
+    public LayerMask visionMask, obstacleMask;
 
     [Header("Hearing")]
     public float hearingRange = 10f;
@@ -25,11 +24,9 @@ public class EnemyAI : MonoBehaviour
     [Header("Movement")]
     public float patrolSpeed = 2f;
     public float chaseSpeed = 4f;
-
-    [Header("Attack")]
     public float stopDistance = 2.2f;
 
-    [Header("Footsteps")]
+    [Header("Audio")]
     public float maxStepDistance = 20f;
     public float minVolume = 0.05f;
     public float maxVolume = 0.8f;
@@ -37,30 +34,33 @@ public class EnemyAI : MonoBehaviour
     [Header("Timers")]
     public float waitTime = 2f;
     public float searchDuration = 7f;
-    public float startDelay = 0f;
+    public float startDelay;
 
     int patrolIndex;
-    float waitTimer, searchTimer, startTimer;
-    bool heardNoise, aiActive, jumpscareTriggered;
+    float waitTimer, searchTimer;
+    bool active, heardNoise, jumpscareTriggered;
 
     Vector3 heardPos, lastSeenPos;
 
     void Start()
     {
-        agent = GetComponent<NavMeshAgent>();
+        if (!agent) agent = GetComponent<NavMeshAgent>();
 
-        if (footstepAudio)
+        if (footsteps)
         {
-            footstepAudio.loop = true;
-            footstepAudio.volume = minVolume;
-            footstepAudio.Play();
+            footsteps.loop = true;
+            footsteps.volume = minVolume;
+            footsteps.Play();
         }
+
+        Invoke(nameof(ActivateAI), startDelay);
     }
+
+    void ActivateAI() => active = true;
 
     void Update()
     {
-        HandleStartDelay();
-        if (!aiActive || jumpscareTriggered) return;
+        if (!active || jumpscareTriggered) return;
 
         UpdateFootsteps();
         DetectPlayer();
@@ -74,27 +74,12 @@ public class EnemyAI : MonoBehaviour
         }
     }
 
-    void HandleStartDelay()
-    {
-        if (aiActive) return;
-
-        startTimer += Time.deltaTime;
-        agent.isStopped = true;
-
-        if (startTimer >= startDelay)
-        {
-            aiActive = true;
-            agent.isStopped = false;
-        }
-    }
-
     void UpdateFootsteps()
     {
-        if (!footstepAudio || !player) return;
+        if (!footsteps || !player) return;
 
         float dist = Vector3.Distance(transform.position, player.position);
-        float t = Mathf.Clamp01(1 - (dist / maxStepDistance));
-        footstepAudio.volume = Mathf.Lerp(minVolume, maxVolume, t);
+        footsteps.volume = Mathf.Lerp(maxVolume, minVolume, dist / maxStepDistance);
     }
 
     void DetectPlayer()
@@ -104,27 +89,24 @@ public class EnemyAI : MonoBehaviour
         float dist = Vector3.Distance(transform.position, player.position);
 
         if (dist > viewDistance) return;
-        if (Vector3.Angle(transform.forward, dir) > viewAngle / 2f) return;
+        if (Vector3.Angle(transform.forward, dir) > viewAngle * 0.5f) return;
 
-        if (Physics.Raycast(eye, dir, out RaycastHit hit, viewDistance, visionMask))
+        if (Physics.Raycast(eye, dir, out RaycastHit hit, viewDistance, visionMask) &&
+            hit.collider.CompareTag("Player") &&
+            !Physics.Raycast(eye, dir, dist, obstacleMask))
         {
-            if (hit.collider.CompareTag("Player") &&
-                !Physics.Raycast(eye, dir, dist, obstacleMask))
-            {
-                lastSeenPos = player.position;
-                state = State.Chase;
-            }
+            lastSeenPos = player.position;
+            state = State.Chase;
         }
     }
 
     public void HearNoise(Vector3 pos)
     {
-        if (Vector3.Distance(transform.position, pos) <= hearingRange)
-        {
-            heardNoise = true;
-            heardPos = pos;
-            state = State.Investigate;
-        }
+        if (Vector3.Distance(transform.position, pos) > hearingRange) return;
+
+        heardNoise = true;
+        heardPos = pos;
+        state = State.Investigate;
     }
 
     void Patrol()
@@ -139,16 +121,15 @@ public class EnemyAI : MonoBehaviour
             return;
         }
 
-        if (agent.remainingDistance < 0.3f)
-        {
-            waitTimer += Time.deltaTime;
+        if (agent.remainingDistance > 0.3f) return;
 
-            if (waitTimer >= waitTime)
-            {
-                waitTimer = 0;
-                patrolIndex = Random.Range(0, patrolPoints.Length);
-                agent.SetDestination(patrolPoints[patrolIndex].position);
-            }
+        waitTimer += Time.deltaTime;
+
+        if (waitTimer >= waitTime)
+        {
+            waitTimer = 0;
+            patrolIndex = Random.Range(0, patrolPoints.Length);
+            agent.SetDestination(patrolPoints[patrolIndex].position);
         }
     }
 
@@ -160,23 +141,13 @@ public class EnemyAI : MonoBehaviour
 
         if (dist <= stopDistance)
         {
-            if (!jumpscareTriggered)
-            {
-                jumpscareTriggered = true;
-
-                agent.isStopped = true;
-                agent.velocity = Vector3.zero;
-                agent.ResetPath();
-                agent.enabled = false;
-
-                jumpscareManager.TriggerJumpscare();
-            }
+            jumpscareTriggered = true;
+            agent.enabled = false;
+            jumpscare.TriggerJumpscare();
             return;
         }
 
-        agent.isStopped = false;
         agent.SetDestination(player.position);
-
         lastSeenPos = player.position;
 
         if (dist > viewDistance * 1.3f)
@@ -186,35 +157,25 @@ public class EnemyAI : MonoBehaviour
     void Investigate()
     {
         agent.speed = patrolSpeed;
+        agent.SetDestination(heardNoise ? heardPos : lastSeenPos);
 
-        Vector3 target = heardNoise ? heardPos : lastSeenPos;
-        agent.SetDestination(target);
+        if (agent.remainingDistance > 0.4f) return;
 
-        if (agent.remainingDistance < 0.4f)
-        {
-            heardNoise = false;
-            searchTimer = 0;
-            state = State.Search;
-        }
+        heardNoise = false;
+        searchTimer = 0;
+        state = State.Search;
     }
 
     void Search()
     {
-        agent.speed = patrolSpeed;
         searchTimer += Time.deltaTime;
 
-        if (searchTimer >= searchDuration)
+        if ((searchTimer += Time.deltaTime) >= searchDuration)
         {
             state = State.Patrol;
-            agent.SetDestination(patrolPoints[patrolIndex].position);
-        }
-    }
 
-    public void FreezeEnemy()
-    {
-        agent.isStopped = true;
-        agent.ResetPath();
-        agent.enabled = false;
-        enabled = false;
+            if (patrolPoints.Length > 0)
+                agent.SetDestination(patrolPoints[patrolIndex].position);
+        }
     }
 }
