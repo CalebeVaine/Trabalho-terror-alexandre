@@ -2,15 +2,14 @@ using UnityEngine;
 
 public class RotacaoObjeto : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public float velocidade = 100f;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        transform.rotation = Quaternion.Euler(
+            transform.eulerAngles.x,
+            transform.eulerAngles.y + velocidade * Time.deltaTime,
+            transform.eulerAngles.z
+        );
     }
 }
