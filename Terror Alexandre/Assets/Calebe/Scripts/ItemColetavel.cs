@@ -4,14 +4,10 @@ public class ItemColetavel : MonoBehaviour
 {
     public string nomeItem = "Moeda";
 
-    private void OnTriggerEnter(Collider other)
+    public void Coletar()
     {
-        JogadorInventario inventario = other.GetComponent<JogadorInventario>();
+        Debug.Log("Coletou: " + nomeItem);
 
-        if (inventario != null)
-        {
-            inventario.ColetarItem(nomeItem);
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }
