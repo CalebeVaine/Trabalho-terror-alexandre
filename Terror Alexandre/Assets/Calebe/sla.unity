@@ -423,6 +423,7 @@ GameObject:
   - component: {fileID: 960441201}
   - component: {fileID: 960441200}
   - component: {fileID: 960441203}
+  - component: {fileID: 960441204}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -548,6 +549,20 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &960441204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960441199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d8eac55c5d92cf4ca1d38c8fd6cc7ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Interacao
+  distancia: 3
+  cameraPlayer: {fileID: 960441201}
 --- !u!1001 &1229469462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -833,9 +848,10 @@ GameObject:
   - component: {fileID: 1532516631}
   - component: {fileID: 1532516630}
   - component: {fileID: 1532516629}
+  - component: {fileID: 1532516634}
   m_Layer: 0
   m_Name: Moeda
-  m_TagString: Untagged
+  m_TagString: Moeda
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -938,13 +954,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532516628}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.55543745, y: -0.20666592, z: 0.10472183, w: 0.7986312}
+  m_LocalRotation: {x: -0.3920737, y: -0.25674915, z: 0.14298888, w: 0.87172955}
   m_LocalPosition: {x: 2.52, y: 0.87, z: -7.02}
   m_LocalScale: {x: 0.50503, y: 0.50503, z: 0.50503}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -57.554, y: -56.316, z: 47.705}
+  m_LocalEulerAnglesHint: {x: -37.6, y: -44.951, z: 34.664}
+--- !u!114 &1532516634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532516628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3165d05a1e94e548b98c21d16ca3b7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotacaoObjeto
+  velocidade: 50
 --- !u!4 &1612685351 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4135013735270702856, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
