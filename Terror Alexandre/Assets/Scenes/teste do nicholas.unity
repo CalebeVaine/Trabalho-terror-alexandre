@@ -1752,8 +1752,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9211862, y: 2.316211, z: 0.9699087}
-  m_Center: {x: -0.0119079845, y: 0.6581069, z: -0.06666839}
+  m_Size: {x: 1.2738558, y: 2.3162112, z: 1.0031526}
+  m_Center: {x: -0.067888595, y: 0.6581069, z: -0.05004666}
 --- !u!1 &103135938 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5306032893396768128, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -3287,8 +3287,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 2.6342318, y: 2.8495102, z: 2.0246988e-14}
-  m_Center: {x: 4.753148, y: 25.428064, z: -1.520578}
+  m_Size: {x: 1.6264687, y: 2.8495092, z: 0}
+  m_Center: {x: 5.25703, y: 25.428064, z: -1.520578}
 --- !u!1 &193702787 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1999469609146428847, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -11823,6 +11823,10 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 3342401934812561935, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
+      propertyPath: chaseSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3342401934812561935, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
       propertyPath: viewDistance
       value: 8
       objectReference: {fileID: 0}
@@ -18376,15 +18380,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_Mass
-      value: 50
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_UseGravity
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: m_Constraints
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: m_LinearDamping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: m_AngularDamping
       value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 54063890643546284, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114497868231759342, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: jumpStrength
@@ -18392,7 +18408,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: speed
-      value: 6.7
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114963311885979670, guid: 11aaea5348574644a9eb4f4504fcce3f, type: 3}
       propertyPath: canRun
@@ -20910,8 +20926,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 2.8495102, z: 4.273114}
-  m_Center: {x: 6.070264, y: 25.428064, z: 0.615979}
+  m_Size: {x: 0, y: 1.46939, z: 4.273114}
+  m_Center: {x: 6.070264, y: 26.11813, z: 0.6159791}
 --- !u!1 &879982151 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4741985607011587752, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -25982,8 +25998,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0, y: 7.8888206, z: 4.273115}
-  m_Center: {x: 6.070264, y: 20.05891, z: 0.6159795}
+  m_Size: {x: 0, y: 3.9802697, z: 4.273115}
+  m_Center: {x: 6.070264, y: 18.10464, z: 0.6159796}
 --- !u!1 &1128429156 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3821675046782506438, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -28164,7 +28180,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0, y: 5.77479, z: 4.151346}
   m_Center: {x: 5.985526, y: 22.938076, z: 0.322146}
@@ -31120,8 +31136,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0000042915344, y: 7.8888206, z: 4.385941}
-  m_Center: {x: 6.1830893, y: 20.05891, z: 0.55956554}
+  m_Size: {x: 0.000004100078, y: 3.858282, z: 4.385941}
+  m_Center: {x: 6.1830893, y: 18.04364, z: 0.5595656}
 --- !u!1 &1421384536 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6456148225690143712, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -31978,8 +31994,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0000023841858, y: 6.73781, z: 15.471229}
-  m_Center: {x: 6.3837852, y: 23.447826, z: 6.215036}
+  m_Size: {x: 0.000002050039, y: 6.73781, z: 11.92111}
+  m_Center: {x: 6.3837852, y: 23.447826, z: 7.990096}
 --- !u!1 &1458729869 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7279888782745254218, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -32308,7 +32324,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1481224535
 Transform:
   m_ObjectHideFlags: 0
@@ -40215,8 +40231,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.0000019073486, y: 6.73781, z: 15.696885}
-  m_Center: {x: 6.270958, y: 23.447826, z: 6.215038}
+  m_Size: {x: 0.000002050039, y: 6.73781, z: 11.995974}
+  m_Center: {x: 6.270958, y: 23.447826, z: 8.065495}
 --- !u!1 &1938102095 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2137644337601936940, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
@@ -42194,7 +42210,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0, y: 5.77479, z: 4.151346}
   m_Center: {x: 6.411269, y: 22.938076, z: 0.322146}
