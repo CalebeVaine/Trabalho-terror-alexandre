@@ -1119,11 +1119,12 @@ MonoBehaviour:
   - {fileID: 68111251}
   - {fileID: 1490221582}
   - {fileID: 816430757}
+  jumpscareAudio: {fileID: 0}
   phoneTexts:
   - ...
   - consegue me ouvir?
   - "porque voc\xEA n\xE3o fala?"
-  - "sei onde voc\xEA est\xE1"
+  - sabe onde estou?
   - "atr\xE1s de voc\xEA"
 --- !u!1001 &1490221577
 PrefabInstance:

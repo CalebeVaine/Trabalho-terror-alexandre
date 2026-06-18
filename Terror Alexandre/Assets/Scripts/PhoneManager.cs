@@ -8,6 +8,9 @@ public class PhoneManager : MonoBehaviour
     [Header("Phones")]
     public PhoneInteraction[] phones;
 
+    [Header("Jumpscare")]
+    public AudioSource jumpscareAudio;
+
     [Header("Subtitles")]
     public string[] phoneTexts =
     {
@@ -39,13 +42,18 @@ public class PhoneManager : MonoBehaviour
 
         if (currentPhone >= phones.Length)
         {
-            Debug.Log("Todos os telefones foram atendidos.");
+            StartCoroutine(LastEvent());
             return;
         }
 
         StartCoroutine(StartNextPhone());
     }
+    private IEnumerator LastEvent()
+    {
+        yield return new WaitForSeconds(3f);
 
+        jumpscareAudio.Play();
+    }
     private IEnumerator StartNextPhone()
     {
         yield return new WaitForSeconds(5f);
