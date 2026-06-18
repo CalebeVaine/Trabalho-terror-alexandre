@@ -5,7 +5,19 @@ public class PhoneManager : MonoBehaviour
 {
     public static PhoneManager Instance;
 
+    [Header("Phones")]
     public PhoneInteraction[] phones;
+
+    [Header("Subtitles")]
+    public string[] phoneTexts =
+    {
+        "...",
+        "Can you hear me?",
+        "Why aren't you talking?",
+        "I know where you are.",
+        "Look behind you.",
+        "I'm coming."
+    };
 
     private int currentPhone = 0;
 
@@ -44,5 +56,14 @@ public class PhoneManager : MonoBehaviour
     private void StartPhone(int index)
     {
         phones[index].StartRinging();
+
+        if (SubtitleManager.Instance != null &&
+            index < phoneTexts.Length)
+        {
+            SubtitleManager.Instance.ShowSubtitle(
+                phoneTexts[index],
+                4f
+            );
+        }
     }
 }
