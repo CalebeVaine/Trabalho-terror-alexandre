@@ -193,6 +193,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 68111249}
+    - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 68111251}
   m_SourcePrefab: {fileID: 100100000, guid: 41da535afd77c734fba232db067b672c, type: 3}
 --- !u!4 &68111247 stripped
 Transform:
@@ -322,6 +325,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &68111251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68111248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
+  ringingAudio: {fileID: 0}
+  pickupSound: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!1001 &816430752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -396,6 +414,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 816430755}
+    - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 816430757}
   m_SourcePrefab: {fileID: 100100000, guid: 41da535afd77c734fba232db067b672c, type: 3}
 --- !u!4 &816430753 stripped
 Transform:
@@ -525,6 +546,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &816430757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816430754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
+  ringingAudio: {fileID: 0}
+  pickupSound: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!1001 &913013984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -668,6 +704,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1085373627}
+    - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1085373629}
   m_SourcePrefab: {fileID: 100100000, guid: 41da535afd77c734fba232db067b672c, type: 3}
 --- !u!4 &1085373625 stripped
 Transform:
@@ -797,6 +836,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1085373629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085373626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
+  ringingAudio: {fileID: 0}
+  pickupSound: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!1 &1247389675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1126,6 +1180,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1490221580}
+    - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1490221582}
   m_SourcePrefab: {fileID: 100100000, guid: 41da535afd77c734fba232db067b672c, type: 3}
 --- !u!4 &1490221578 stripped
 Transform:
@@ -1255,6 +1312,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1490221582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490221579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
+  ringingAudio: {fileID: 0}
+  pickupSound: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!1001 &2022495780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1329,6 +1401,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2022495783}
+    - targetCorrespondingSourceObject: {fileID: 6751920765482138441, guid: 41da535afd77c734fba232db067b672c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2022495785}
   m_SourcePrefab: {fileID: 100100000, guid: 41da535afd77c734fba232db067b672c, type: 3}
 --- !u!4 &2022495781 stripped
 Transform:
@@ -1458,6 +1533,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2022495785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2022495782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
+  ringingAudio: {fileID: 0}
+  pickupSound: {fileID: 0}
+  interactText: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
