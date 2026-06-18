@@ -1119,7 +1119,12 @@ MonoBehaviour:
   - {fileID: 68111251}
   - {fileID: 1490221582}
   - {fileID: 816430757}
-  phoneTexts: []
+  phoneTexts:
+  - ...
+  - consegue me ouvir?
+  - "porque voc\xEA n\xE3o fala?"
+  - "sei onde voc\xEA est\xE1"
+  - "atr\xE1s de voc\xEA"
 --- !u!1001 &1490221577
 PrefabInstance:
   m_ObjectHideFlags: 0
