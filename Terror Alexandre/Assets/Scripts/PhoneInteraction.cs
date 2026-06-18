@@ -1,18 +1,23 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PhoneInteraction : MonoBehaviour
 {
     public AudioSource ringingAudio;
     public AudioClip pickupSound;
+    public GameObject interactText;
 
     private bool playerInside;
 
-    void Update()
+    public void Interact(InputAction.CallbackContext context)
     {
-        if (playerInside && Input.GetKeyDown(KeyCode.E))
-        {
-            AnswerPhone();
-        }
+        if (!context.performed)
+            return;
+
+        if (!playerInside)
+            return;
+
+        AnswerPhone();
     }
 
     private void AnswerPhone()
@@ -27,7 +32,9 @@ public class PhoneInteraction : MonoBehaviour
             );
         }
 
-        Debug.Log("Telefone atendido.");
+        interactText.SetActive(false);
+
+        Debug.Log("Telefone atendido!");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,6 +42,7 @@ public class PhoneInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = true;
+            interactText.SetActive(true);
         }
     }
 
@@ -43,6 +51,7 @@ public class PhoneInteraction : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInside = false;
+            interactText.SetActive(false);
         }
     }
 }
