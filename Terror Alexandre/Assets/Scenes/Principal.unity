@@ -337,9 +337,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringingAudio: {fileID: 0}
-  pickupSound: {fileID: 0}
-  interactText: {fileID: 0}
+  ringAudio: {fileID: 0}
 --- !u!1001 &816430752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -558,9 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringingAudio: {fileID: 0}
-  pickupSound: {fileID: 0}
-  interactText: {fileID: 0}
+  ringAudio: {fileID: 0}
 --- !u!1001 &913013984
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -848,9 +844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringingAudio: {fileID: 0}
-  pickupSound: {fileID: 0}
-  interactText: {fileID: 0}
+  ringAudio: {fileID: 0}
 --- !u!1 &1247389675
 GameObject:
   m_ObjectHideFlags: 0
@@ -1079,6 +1073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1377258263}
+  - component: {fileID: 1377258264}
   m_Layer: 0
   m_Name: phoneManager
   m_TagString: Untagged
@@ -1106,6 +1101,25 @@ Transform:
   - {fileID: 1085373625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1377258264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377258262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9011e69a0b1d2eb40adbe1779537418c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PhoneManager
+  phones:
+  - {fileID: 1085373629}
+  - {fileID: 2022495785}
+  - {fileID: 68111251}
+  - {fileID: 1490221582}
+  - {fileID: 816430757}
+  phoneTexts: []
 --- !u!1001 &1490221577
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1324,9 +1338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringingAudio: {fileID: 0}
-  pickupSound: {fileID: 0}
-  interactText: {fileID: 0}
+  ringAudio: {fileID: 0}
 --- !u!1001 &2022495780
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1545,9 +1557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringingAudio: {fileID: 0}
-  pickupSound: {fileID: 0}
-  interactText: {fileID: 0}
+  ringAudio: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
