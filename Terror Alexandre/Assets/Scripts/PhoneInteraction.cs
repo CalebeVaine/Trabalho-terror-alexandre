@@ -1,57 +1,41 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class PhoneInteraction : MonoBehaviour
 {
-    public AudioSource ringingAudio;
-    public AudioClip pickupSound;
-    public GameObject interactText;
+    public AudioSource ringAudio;
 
-    private bool playerInside;
+    private bool isRinging;
+    private bool playerNearby;
 
-    public void Interact(InputAction.CallbackContext context)
+    public void StartRinging()
     {
-        if (!context.performed)
-            return;
+        isRinging = true;
 
-        if (!playerInside)
-            return;
-
-        AnswerPhone();
+        ringAudio.loop = true;
+        ringAudio.Play();
     }
 
-    private void AnswerPhone()
+    public void Interact()
     {
-        ringingAudio.Stop();
+        if (!isRinging)
+            return;
 
-        if (pickupSound != null)
-        {
-            AudioSource.PlayClipAtPoint(
-                pickupSound,
-                Camera.main.transform.position
-            );
-        }
+        ringAudio.Stop();
 
-        interactText.SetActive(false);
+        isRinging = false;
 
-        Debug.Log("Telefone atendido!");
+        PhoneManager.Instance.PhoneAnswered();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            playerInside = true;
-            interactText.SetActive(true);
-        }
+            playerNearby = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
-        {
-            playerInside = false;
-            interactText.SetActive(false);
-        }
+            playerNearby = false;
     }
 }
