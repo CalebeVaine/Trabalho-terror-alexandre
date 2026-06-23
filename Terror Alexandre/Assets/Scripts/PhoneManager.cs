@@ -38,6 +38,14 @@ public class PhoneManager : MonoBehaviour
 
     public void PhoneAnswered()
     {
+        if (currentPhone < phoneTexts.Length)
+        {
+            SubtitleManager.Instance.ShowSubtitle(
+                phoneTexts[currentPhone],
+                4f
+            );
+        }
+
         currentPhone++;
 
         if (currentPhone >= phones.Length)
