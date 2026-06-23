@@ -1139,15 +1139,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.033
+      value: -1.92
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.267
+      value: 0.2439
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.496
+      value: -2.503
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -27907,7 +27907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.508
+      value: 1.169
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -31030,7 +31030,7 @@ Light:
   serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -31092,13 +31092,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1279401767}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
+  m_LocalRotation: {x: -0.26344392, y: 0.027897801, z: -0.010694041, w: 0.964212}
   m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: -30.493, y: 3.955, z: -2.349}
 --- !u!114 &1279401770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37887,7 +37887,7 @@ PrefabInstance:
       objectReference: {fileID: 2076557790}
     - target: {fileID: 3342401934812561935, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
       propertyPath: viewAngle
-      value: 200
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 3342401934812561935, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
       propertyPath: chaseSpeed
@@ -43369,7 +43369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.691
+      value: 1.179
       objectReference: {fileID: 0}
     - target: {fileID: 6266886996612162035, guid: 41da535afd77c734fba232db067b672c, type: 3}
       propertyPath: m_LocalPosition.z
