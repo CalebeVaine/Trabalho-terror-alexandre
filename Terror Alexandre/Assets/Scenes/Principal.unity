@@ -1335,7 +1335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringAudio: {fileID: 0}
+  ringAudio: {fileID: 68111250}
 --- !u!65 &68149682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24092,7 +24092,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringAudio: {fileID: 0}
+  ringAudio: {fileID: 816430756}
 --- !u!65 &818028521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28245,7 +28245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringAudio: {fileID: 0}
+  ringAudio: {fileID: 1085373628}
 --- !u!65 &1087918331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -35242,7 +35242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringAudio: {fileID: 0}
+  ringAudio: {fileID: 1490221581}
 --- !u!65 &1492189848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43836,7 +43836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4714cd9d4a2f2e3499772a368adc674d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneInteraction
-  ringAudio: {fileID: 0}
+  ringAudio: {fileID: 2022495784}
 --- !u!65 &2026834025
 BoxCollider:
   m_ObjectHideFlags: 0
