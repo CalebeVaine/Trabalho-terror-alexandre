@@ -58,7 +58,10 @@ public class PhoneManager : MonoBehaviour
     }
     private IEnumerator LastEvent()
     {
+        AmbientManager.Instance.SwitchToDanger();
+
         yield return new WaitForSeconds(3f);
+
 
         jumpscareAudio.Play();
     }
