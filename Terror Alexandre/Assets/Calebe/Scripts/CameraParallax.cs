@@ -2,39 +2,37 @@ using UnityEngine;
 
 public class CameraParallax : MonoBehaviour
 {
-    [Header("Movement Settings")]
-    [SerializeField] private float movementAmount = 0.5f;
+    [Header("Rotation Settings")]
+    [SerializeField] private float rotationAmount = 5f;
     [SerializeField] private float smoothSpeed = 3f;
 
-    private Vector3 startPosition;
+    private Quaternion startRotation;
 
     private void Start()
     {
-        startPosition = transform.position;
+        startRotation = transform.rotation;
     }
 
     private void Update()
     {
-        MoveCamera();
+        RotateCamera();
     }
 
-    private void MoveCamera()
+    private void RotateCamera()
     {
         float mouseX = Input.mousePosition.x / Screen.width;
-        float mouseY = Input.mousePosition.y / Screen.height;
 
-        float offsetX = (mouseX - 0.5f) * movementAmount;
-        float offsetY = (mouseY - 0.5f) * movementAmount;
+        float rotationY = (mouseX - 0.5f) * rotationAmount;
 
-        Vector3 targetPosition = startPosition + new Vector3(
-            offsetX,
-            offsetY,
+        Quaternion targetRotation = startRotation * Quaternion.Euler(
+            0,
+            rotationY,
             0
         );
 
-        transform.position = Vector3.Lerp(
-            transform.position,
-            targetPosition,
+        transform.rotation = Quaternion.Lerp(
+            transform.rotation,
+            targetRotation,
             smoothSpeed * Time.deltaTime
         );
     }
