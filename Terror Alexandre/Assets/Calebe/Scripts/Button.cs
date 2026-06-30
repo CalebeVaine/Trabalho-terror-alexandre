@@ -3,10 +3,10 @@ using UnityEngine.SceneManagement;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] private string sceneName;
+    [SerializeField] private string Scene;
 
     public void ChangeScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(Scene);
     }
 }

@@ -42780,7 +42780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c66a31137f2144972d92b83a39b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Button
-  sceneName: 
+  Scene: 
 --- !u!65 &1705439699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43462,7 +43462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b7c66a31137f2144972d92b83a39b8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Button
-  sceneName: Principal
+  Scene: Principal
 --- !u!65 &1754697514
 BoxCollider:
   m_ObjectHideFlags: 0
