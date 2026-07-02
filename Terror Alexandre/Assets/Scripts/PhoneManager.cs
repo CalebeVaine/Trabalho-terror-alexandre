@@ -8,9 +8,6 @@ public class PhoneManager : MonoBehaviour
     [Header("Phones")]
     public PhoneInteraction[] phones;
 
-    [Header("Jumpscare")]
-    public AudioSource jumpscareAudio;
-
     [Header("Subtitles")]
     public string[] phoneTexts =
     {
@@ -18,9 +15,11 @@ public class PhoneManager : MonoBehaviour
         "Can you hear me?",
         "Why aren't you talking?",
         "I know where you are.",
-        "Look behind you.",
         "I'm coming."
     };
+
+    [Header("Jumpscare")]
+    public AudioSource jumpscareAudio;
 
     private int currentPhone = 0;
 
@@ -36,14 +35,19 @@ public class PhoneManager : MonoBehaviour
         StartPhone(currentPhone);
     }
 
+    private void StartPhone(int index)
+    {
+        if (index >= phones.Length)
+            return;
+
+        phones[index].StartRinging();
+    }
+
     public void PhoneAnswered()
     {
         if (currentPhone < phoneTexts.Length)
         {
-            SubtitleManager.Instance.ShowSubtitle(
-                phoneTexts[currentPhone],
-                4f
-            );
+            SubtitleManager.Instance.ShowSubtitle(phoneTexts[currentPhone], 4f);
         }
 
         currentPhone++;
@@ -56,33 +60,20 @@ public class PhoneManager : MonoBehaviour
 
         StartCoroutine(StartNextPhone());
     }
-    private IEnumerator LastEvent()
-    {
-        AmbientManager.Instance.SwitchToDanger();
 
-        yield return new WaitForSeconds(3f);
-
-
-        jumpscareAudio.Play();
-    }
     private IEnumerator StartNextPhone()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         StartPhone(currentPhone);
     }
 
-    private void StartPhone(int index)
+    private IEnumerator LastEvent()
     {
-        phones[index].StartRinging();
+        AmbientManager.Instance.SwitchToDanger();
 
-        if (SubtitleManager.Instance != null &&
-            index < phoneTexts.Length)
-        {
-            SubtitleManager.Instance.ShowSubtitle(
-                phoneTexts[index],
-                4f
-            );
-        }
+        yield return new WaitForSeconds(8f);
+
+        jumpscareAudio.Play();
     }
 }

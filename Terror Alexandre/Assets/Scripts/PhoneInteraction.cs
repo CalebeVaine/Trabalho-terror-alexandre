@@ -5,10 +5,15 @@ public class PhoneInteraction : MonoBehaviour
     public AudioSource ringAudio;
 
     private bool isRinging;
-    private bool playerNearby;
 
     public void StartRinging()
     {
+        if (ringAudio == null)
+        {
+            Debug.LogError("Ring Audio não foi atribuído em " + gameObject.name);
+            return;
+        }
+
         isRinging = true;
 
         ringAudio.loop = true;
@@ -27,15 +32,8 @@ public class PhoneInteraction : MonoBehaviour
         PhoneManager.Instance.PhoneAnswered();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public bool IsRinging()
     {
-        if (other.CompareTag("Player"))
-            playerNearby = true;
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-            playerNearby = false;
+        return isRinging;
     }
 }
