@@ -10,6 +10,7 @@ public class EnemyAI : MonoBehaviour
     public Transform player;
     public Transform[] patrolPoints;
     public AudioSource footsteps;
+    public AudioSource detectionSound; // Som ao detectar o jogador
     public JumpscareController jumpscare;
     public NavMeshAgent agent;
 
@@ -40,6 +41,8 @@ public class EnemyAI : MonoBehaviour
     float waitTimer, searchTimer;
     bool active, heardNoise, jumpscareTriggered;
 
+    bool playerDetected; // Evita repetir o som enquanto estiver vendo o jogador
+
     Vector3 heardPos, lastSeenPos;
 
     void Start()
@@ -51,6 +54,12 @@ public class EnemyAI : MonoBehaviour
             footsteps.loop = true;
             footsteps.volume = minVolume;
             footsteps.Play();
+        }
+
+        if (detectionSound)
+        {
+            detectionSound.playOnAwake = false;
+            detectionSound.loop = false;
         }
 
         Invoke(nameof(ActivateAI), startDelay);
@@ -88,8 +97,17 @@ public class EnemyAI : MonoBehaviour
         Vector3 dir = (player.position - eye).normalized;
         float dist = Vector3.Distance(transform.position, player.position);
 
-        if (dist > viewDistance) return;
-        if (Vector3.Angle(transform.forward, dir) > viewAngle * 0.5f) return;
+        if (dist > viewDistance)
+        {
+            playerDetected = false;
+            return;
+        }
+
+        if (Vector3.Angle(transform.forward, dir) > viewAngle * 0.5f)
+        {
+            playerDetected = false;
+            return;
+        }
 
         if (Physics.Raycast(eye, dir, out RaycastHit hit, viewDistance, visionMask) &&
             hit.collider.CompareTag("Player") &&
@@ -97,6 +115,18 @@ public class EnemyAI : MonoBehaviour
         {
             lastSeenPos = player.position;
             state = State.Chase;
+
+            // Toca o som apenas quando detectar o jogador pela primeira vez
+            if (!playerDetected && detectionSound)
+            {
+                detectionSound.Play();
+            }
+
+            playerDetected = true;
+        }
+        else
+        {
+            playerDetected = false;
         }
     }
 
