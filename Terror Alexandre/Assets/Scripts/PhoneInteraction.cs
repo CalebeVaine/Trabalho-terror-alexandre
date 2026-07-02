@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PhoneInteraction : MonoBehaviour
+public class PhoneInteraction : MonoBehaviour, IInteractable
 {
     public AudioSource ringAudio;
 
@@ -9,13 +9,9 @@ public class PhoneInteraction : MonoBehaviour
     public void StartRinging()
     {
         if (ringAudio == null)
-        {
-            Debug.LogError("Ring Audio não foi atribuído em " + gameObject.name);
             return;
-        }
 
         isRinging = true;
-
         ringAudio.loop = true;
         ringAudio.Play();
     }
@@ -26,14 +22,13 @@ public class PhoneInteraction : MonoBehaviour
             return;
 
         ringAudio.Stop();
-
         isRinging = false;
 
         PhoneManager.Instance.PhoneAnswered();
     }
 
-    public bool IsRinging()
+    public string GetInteractionText()
     {
-        return isRinging;
+        return isRinging ? "[E] Atender" : "";
     }
 }
