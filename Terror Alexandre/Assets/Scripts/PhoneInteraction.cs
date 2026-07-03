@@ -9,7 +9,10 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     public void StartRinging()
     {
         if (ringAudio == null)
+        {
+            Debug.LogError("AudioSource não atribuído em " + gameObject.name);
             return;
+        }
 
         isRinging = true;
         ringAudio.loop = true;
