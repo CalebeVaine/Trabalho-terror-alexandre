@@ -47,7 +47,17 @@ public class PhoneManager : MonoBehaviour
     {
         if (currentPhone < phoneTexts.Length)
         {
-            SubtitleManager.Instance.ShowSubtitle(phoneTexts[currentPhone], 4f);
+            if (currentPhone < phoneTexts.Length)
+{
+    if (SubtitleManager.Instance == null)
+    {
+        Debug.LogError("SubtitleManager não encontrado!");
+    }
+    else
+    {
+        SubtitleManager.Instance.ShowSubtitle(phoneTexts[currentPhone], 4f);
+    }
+}
         }
 
         currentPhone++;

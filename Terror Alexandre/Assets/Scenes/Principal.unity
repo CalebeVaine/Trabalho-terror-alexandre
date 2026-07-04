@@ -22812,7 +22812,7 @@ MonoBehaviour:
   interactDistance: 6
   interactLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
 --- !u!65 &706129129
 BoxCollider:
   m_ObjectHideFlags: 0
