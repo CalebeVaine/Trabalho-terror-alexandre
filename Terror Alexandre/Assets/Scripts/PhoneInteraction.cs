@@ -7,28 +7,31 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     private bool isRinging;
 
     public void StartRinging()
-    {
-        if (ringAudio == null)
-        {
-            Debug.LogError("AudioSource não atribuído em " + gameObject.name);
-            return;
-        }
+{
+    Debug.Log(gameObject.name + " começou a tocar");
 
-        isRinging = true;
-        ringAudio.loop = true;
-        ringAudio.Play();
-    }
+    if (ringAudio == null)
+        return;
 
-    public void Interact()
-    {
-        if (!isRinging)
-            return;
+    isRinging = true;
+    ringAudio.loop = true;
+    ringAudio.Play();
+}
 
-        ringAudio.Stop();
-        isRinging = false;
+public void Interact()
+{
+    Debug.Log(gameObject.name + " | isRinging = " + isRinging);
 
-        PhoneManager.Instance.PhoneAnswered();
-    }
+    if (!isRinging)
+        return;
+
+    Debug.Log("Atendeu o telefone!");
+
+    ringAudio.Stop();
+    isRinging = false;
+
+    PhoneManager.Instance.PhoneAnswered();
+}
 
     public string GetInteractionText()
     {
