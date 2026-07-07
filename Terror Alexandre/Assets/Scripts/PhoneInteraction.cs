@@ -8,6 +8,10 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     public AudioSource voiceAudio;
     public AudioSource errorAudio;
 
+    [Header("Último telefone")]
+    public bool activateEnemy;
+    public GameObject enemy;
+
     private bool isRinging;
 
     public void StartRinging()
@@ -21,20 +25,23 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     }
 
     public void Interact()
-{
-    if (!isRinging)
     {
-        if (errorAudio != null)
-            errorAudio.Play();
+        if (!isRinging)
+        {
+            if (errorAudio != null)
+                errorAudio.Play();
 
-        return;
+            return;
+        }
+
+        ringAudio.Stop();
+        isRinging = false;
+
+        if (activateEnemy && enemy != null)
+            enemy.SetActive(true);
+
+        StartCoroutine(AnswerRoutine());
     }
-
-    ringAudio.Stop();
-    isRinging = false;
-
-    StartCoroutine(AnswerRoutine());
-}
 
     private IEnumerator AnswerRoutine()
     {
