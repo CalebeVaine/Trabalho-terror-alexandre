@@ -1067,7 +1067,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 362.8097, y: -170.3569}
+  m_AnchoredPosition: {x: 661.9, y: -260.4}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &62823270
@@ -1092,8 +1092,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: E - interagir
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3970e22d13d43b745b453e76fd853b91, type: 2}
+  m_sharedMaterial: {fileID: 1422210940191436802, guid: 3970e22d13d43b745b453e76fd853b91, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1117,8 +1117,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27.5
-  m_fontSizeBase: 27.5
+  m_fontSize: 32.86
+  m_fontSizeBase: 32.86
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1488,6 +1488,8 @@ MonoBehaviour:
   answerAudio: {fileID: 134415713}
   voiceAudio: {fileID: 251371183}
   errorAudio: {fileID: 901288537}
+  activateEnemy: 0
+  enemy: {fileID: 0}
 --- !u!65 &68149682
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26196,6 +26198,8 @@ MonoBehaviour:
   answerAudio: {fileID: 221535963}
   voiceAudio: {fileID: 1885258760}
   errorAudio: {fileID: 1201863673}
+  activateEnemy: 1
+  enemy: {fileID: 1197168988}
 --- !u!65 &818028521
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30770,6 +30774,8 @@ MonoBehaviour:
   answerAudio: {fileID: 361677558}
   voiceAudio: {fileID: 1196570656}
   errorAudio: {fileID: 2130536210}
+  activateEnemy: 0
+  enemy: {fileID: 0}
 --- !u!65 &1087918331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -38605,6 +38611,8 @@ MonoBehaviour:
   answerAudio: {fileID: 109773249}
   voiceAudio: {fileID: 669926895}
   errorAudio: {fileID: 851872559}
+  activateEnemy: 0
+  enemy: {fileID: 0}
 --- !u!65 &1492189848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41750,7 +41758,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5167152560538092120, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5167152560538092120, guid: 53d68dd77a14af444b2409829e3164ea, type: 3}
       propertyPath: m_TagString
@@ -47043,7 +47051,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 768.73, y: -9.8}
+  m_AnchoredPosition: {x: 736, y: -50}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1993911290
@@ -47068,7 +47076,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: n
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3970e22d13d43b745b453e76fd853b91, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -47093,8 +47101,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 22.39
-  m_fontSizeBase: 22.39
+  m_fontSize: 25.31
+  m_fontSizeBase: 25.31
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -47134,7 +47142,7 @@ MonoBehaviour:
   m_margin: {x: -44.546814, y: 0, z: -97.83435, w: 14.239578}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1993911291
@@ -47779,6 +47787,8 @@ MonoBehaviour:
   answerAudio: {fileID: 1344528438}
   voiceAudio: {fileID: 87492338}
   errorAudio: {fileID: 777018480}
+  activateEnemy: 0
+  enemy: {fileID: 0}
 --- !u!1 &2023909346
 GameObject:
   m_ObjectHideFlags: 0
