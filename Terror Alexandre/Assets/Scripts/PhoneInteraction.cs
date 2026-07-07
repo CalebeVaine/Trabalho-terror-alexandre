@@ -6,6 +6,7 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     public AudioSource ringAudio;
     public AudioSource answerAudio;
     public AudioSource voiceAudio;
+    public AudioSource errorAudio;
 
     private bool isRinging;
 
@@ -20,15 +21,20 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     }
 
     public void Interact()
+{
+    if (!isRinging)
     {
-        if (!isRinging)
-            return;
+        if (errorAudio != null)
+            errorAudio.Play();
 
-        ringAudio.Stop();
-        isRinging = false;
-
-        StartCoroutine(AnswerRoutine());
+        return;
     }
+
+    ringAudio.Stop();
+    isRinging = false;
+
+    StartCoroutine(AnswerRoutine());
+}
 
     private IEnumerator AnswerRoutine()
     {
