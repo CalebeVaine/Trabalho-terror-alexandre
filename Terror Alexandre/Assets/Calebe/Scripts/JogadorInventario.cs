@@ -7,6 +7,6 @@ public class PlayerInventory : MonoBehaviour
     public void AddKey()
     {
         HasKey = true;
-        Debug.Log("Chave obtida!");
+        Debug.Log("Chave coletada!");
     }
 }
