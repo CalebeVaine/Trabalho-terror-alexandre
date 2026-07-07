@@ -1,37 +1,53 @@
+using System.Collections;
 using UnityEngine;
 
 public class PhoneInteraction : MonoBehaviour, IInteractable
 {
     public AudioSource ringAudio;
+    public AudioSource answerAudio;
+    public AudioSource voiceAudio;
 
     private bool isRinging;
 
     public void StartRinging()
-{
-    Debug.Log(gameObject.name + " começou a tocar");
+    {
+        if (ringAudio == null)
+            return;
 
-    if (ringAudio == null)
-        return;
+        isRinging = true;
+        ringAudio.loop = true;
+        ringAudio.Play();
+    }
 
-    isRinging = true;
-    ringAudio.loop = true;
-    ringAudio.Play();
-}
+    public void Interact()
+    {
+        if (!isRinging)
+            return;
 
-public void Interact()
-{
-    Debug.Log(gameObject.name + " | isRinging = " + isRinging);
+        ringAudio.Stop();
+        isRinging = false;
 
-    if (!isRinging)
-        return;
+        StartCoroutine(AnswerRoutine());
+    }
 
-    Debug.Log("Atendeu o telefone!");
+    private IEnumerator AnswerRoutine()
+    {
+        if (answerAudio != null)
+        {
+            answerAudio.Play();
+            yield return new WaitForSeconds(answerAudio.clip.length);
+        }
 
-    ringAudio.Stop();
-    isRinging = false;
-
-    PhoneManager.Instance.PhoneAnswered();
-}
+        if (voiceAudio != null)
+        {
+            voiceAudio.Play();
+            PhoneManager.Instance.PhoneAnswered(voiceAudio.clip.length);
+        }
+        else
+        {
+            PhoneManager.Instance.PhoneAnswered(4f);
+        }
+    }
 
     public string GetInteractionText()
     {

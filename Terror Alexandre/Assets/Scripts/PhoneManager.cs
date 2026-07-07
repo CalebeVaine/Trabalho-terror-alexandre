@@ -28,10 +28,8 @@ public class PhoneManager : MonoBehaviour
         Instance = this;
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-        yield return new WaitForSeconds(15f);
-
         StartPhone(currentPhone);
     }
 
@@ -43,21 +41,11 @@ public class PhoneManager : MonoBehaviour
         phones[index].StartRinging();
     }
 
-    public void PhoneAnswered()
+    public void PhoneAnswered(float voiceDuration)
     {
-        if (currentPhone < phoneTexts.Length)
+        if (SubtitleManager.Instance != null && currentPhone < phoneTexts.Length)
         {
-            if (currentPhone < phoneTexts.Length)
-{
-    if (SubtitleManager.Instance == null)
-    {
-        Debug.LogError("SubtitleManager não encontrado!");
-    }
-    else
-    {
-        SubtitleManager.Instance.ShowSubtitle(phoneTexts[currentPhone], 4f);
-    }
-}
+            SubtitleManager.Instance.ShowSubtitle(phoneTexts[currentPhone], voiceDuration);
         }
 
         currentPhone++;
@@ -68,12 +56,12 @@ public class PhoneManager : MonoBehaviour
             return;
         }
 
-        StartCoroutine(StartNextPhone());
+        StartCoroutine(StartNextPhone(voiceDuration));
     }
 
-    private IEnumerator StartNextPhone()
+    private IEnumerator StartNextPhone(float voiceDuration)
     {
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(voiceDuration + 10f);
 
         StartPhone(currentPhone);
     }
@@ -84,6 +72,7 @@ public class PhoneManager : MonoBehaviour
 
         yield return new WaitForSeconds(8f);
 
-        jumpscareAudio.Play();
+        if (jumpscareAudio != null)
+            jumpscareAudio.Play();
     }
 }
