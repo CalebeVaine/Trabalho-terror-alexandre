@@ -1,15 +1,12 @@
 using UnityEngine;
-using System.Collections.Generic;
 
-public class JogadorInventario : MonoBehaviour
+public class PlayerInventory : MonoBehaviour
 {
-    private List<string> itens = new List<string>();
+    public bool HasKey { get; private set; }
 
-    public void ColetarItem(string item)
+    public void AddKey()
     {
-        itens.Add(item);
-
-        Debug.Log("Item coletado: " + item);
-        Debug.Log("Total de itens: " + itens.Count);
+        HasKey = true;
+        Debug.Log("Chave obtida!");
     }
 }
