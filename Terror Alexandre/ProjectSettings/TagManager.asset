@@ -7,6 +7,7 @@ TagManager:
   - CinemachineTarget
   - Moeda
   - Enemy
+  - Key
   layers:
   - Default
   - TransparentFX
