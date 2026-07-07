@@ -37,8 +37,8 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
         ringAudio.Stop();
         isRinging = false;
 
-        if (activateEnemy && enemy != null)
-            enemy.SetActive(true);
+        if (activateEnemy)
+            JumpscareManagerAudio.Instance.PlayJumpscare();
 
         StartCoroutine(AnswerRoutine());
     }
