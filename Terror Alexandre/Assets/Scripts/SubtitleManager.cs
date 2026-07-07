@@ -16,19 +16,24 @@ public class SubtitleManager : MonoBehaviour
     }
 
     public void ShowSubtitle(string text, float duration = 4f)
-    {
-        if (currentRoutine != null)
-            StopCoroutine(currentRoutine);
+{
+    Debug.Log("Legenda: " + text);
 
-        currentRoutine = StartCoroutine(ShowRoutine(text, duration));
-    }
+    if (currentRoutine != null)
+        StopCoroutine(currentRoutine);
 
-    private IEnumerator ShowRoutine(string text, float duration)
-    {
-        subtitleText.text = text;
+    currentRoutine = StartCoroutine(ShowRoutine(text, duration));
+}
 
-        yield return new WaitForSeconds(duration);
+   private IEnumerator ShowRoutine(string text, float duration)
+{
+    subtitleText.gameObject.SetActive(true);
 
-        subtitleText.text = "";
-    }
+    subtitleText.text = text;
+
+    yield return new WaitForSeconds(duration);
+
+    subtitleText.text = "";
+    subtitleText.gameObject.SetActive(false);
+}
 }
