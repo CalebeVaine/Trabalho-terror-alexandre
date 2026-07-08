@@ -4,6 +4,7 @@ using UnityEngine;
 public class PhoneManager : MonoBehaviour
 {
     public static PhoneManager Instance;
+    [SerializeField] private GameObject enemy;
 
     [Header("Phones")]
     public PhoneInteraction[] phones;
@@ -69,6 +70,9 @@ public class PhoneManager : MonoBehaviour
     private IEnumerator LastEvent()
     {
         AmbientManager.Instance.SwitchToDanger();
+
+        if (enemy != null)
+            enemy.SetActive(true);
 
         yield return new WaitForSeconds(8f);
 

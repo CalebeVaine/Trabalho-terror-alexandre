@@ -1391,7 +1391,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3516aeb26a80c9544b3f2de2068c89be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.429
+  m_Volume: 0.239
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -26366,7 +26366,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3516aeb26a80c9544b3f2de2068c89be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.429
+  m_Volume: 0.239
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -31250,7 +31250,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3516aeb26a80c9544b3f2de2068c89be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.429
+  m_Volume: 0.239
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -39092,7 +39092,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3516aeb26a80c9544b3f2de2068c89be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.429
+  m_Volume: 0.239
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -40220,7 +40220,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1564615567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -40241,8 +40241,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.9937134, y: 2.2977905}
+  m_SizeDelta: {x: 33.3309, y: 16.7144}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1564615568
 MonoBehaviour:
@@ -48459,7 +48459,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: 3516aeb26a80c9544b3f2de2068c89be, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.429
+  m_Volume: 0.239
   m_Pitch: 1
   Loop: 0
   Mute: 0
