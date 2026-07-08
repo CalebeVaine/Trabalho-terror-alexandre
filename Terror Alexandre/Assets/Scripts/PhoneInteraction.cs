@@ -6,6 +6,7 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
     public AudioSource ringAudio;
     public AudioSource answerAudio;
     public AudioSource voiceAudio;
+    public AudioSource hintAudio;
     public AudioSource errorAudio;
 
     [Header("Último telefone")]
@@ -20,8 +21,15 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
             return;
 
         isRinging = true;
+
         ringAudio.loop = true;
         ringAudio.Play();
+
+        if (hintAudio != null)
+        {
+            hintAudio.loop = true;
+            hintAudio.Play();
+        }
     }
 
     public void Interact()
@@ -35,10 +43,11 @@ public class PhoneInteraction : MonoBehaviour, IInteractable
         }
 
         ringAudio.Stop();
-        isRinging = false;
 
-        if (activateEnemy)
-            JumpscareManagerAudio.Instance.PlayJumpscare();
+        if (hintAudio != null)
+            hintAudio.Stop();
+
+        isRinging = false;
 
         StartCoroutine(AnswerRoutine());
     }

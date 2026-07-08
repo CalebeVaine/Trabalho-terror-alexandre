@@ -1858,7 +1858,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1796688136}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
       insertIndex: -1
@@ -42822,6 +42825,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.2302876, y: 2.8495092, z: 0}
   m_Center: {x: -0.67545503, y: 25.428064, z: -1.520578}
+--- !u!4 &1751897328 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6c8f668308f74174cb9ed9ec5b9170ab, type: 3}
+  m_PrefabInstance: {fileID: 86405041}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1752033081
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -43599,6 +43607,59 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 7.0925865, y: 6.737809, z: 4.7875014e-14}
   m_Center: {x: 9.641316, y: 16.633905, z: -12.70974}
+--- !u!1 &1796688135
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1796688136}
+  - component: {fileID: 1796688137}
+  m_Layer: 0
+  m_Name: 'arrumando bug '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1796688136
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796688135}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.77, y: 12.75, z: -2.74}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1751897328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1796688137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1796688135}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.419051, y: 0.20718002, z: 3.0474322}
+  m_Center: {x: 1.2467928, y: 0.29909757, z: -0.4266285}
 --- !u!65 &1797175037
 BoxCollider:
   m_ObjectHideFlags: 0
