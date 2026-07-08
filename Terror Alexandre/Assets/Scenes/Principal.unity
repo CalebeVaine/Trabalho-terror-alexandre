@@ -45213,6 +45213,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7395458, y: 1.8418798, z: 1.30873434e-14}
   m_Center: {x: 4.577097, y: 16.68812, z: 3.607611}
+--- !u!4 &1833630391 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5147502021882513276, guid: 411531eb87ac2564f902652c9e578164, type: 3}
+  m_PrefabInstance: {fileID: 1371546329}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &1834840090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49804,7 +49809,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 360b4589c54ca414bb0e39aa8204bdb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JumpscareController
-  playerCamera: {fileID: 0}
+  playerCamera: {fileID: 1833630391}
   playerScripts:
   - {fileID: 0}
   enemy: {fileID: 1197168988}
