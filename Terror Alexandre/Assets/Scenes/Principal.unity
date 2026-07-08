@@ -1399,8 +1399,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 2
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -26374,8 +26374,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 2
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -31258,8 +31258,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 2
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -36858,6 +36858,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9011e69a0b1d2eb40adbe1779537418c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PhoneManager
+  enemy: {fileID: 1197168988}
   phones:
   - {fileID: 1085373629}
   - {fileID: 2022495785}
@@ -39100,8 +39101,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 2
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -40220,7 +40221,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1564615567
 RectTransform:
   m_ObjectHideFlags: 0
@@ -48467,8 +48468,8 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 10
-  MaxDistance: 20
+  MinDistance: 2
+  MaxDistance: 11
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
