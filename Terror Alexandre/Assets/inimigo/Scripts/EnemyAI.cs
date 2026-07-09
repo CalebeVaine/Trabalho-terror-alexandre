@@ -94,32 +94,41 @@ public class EnemyAI : MonoBehaviour
     }
 
     void DetectPlayer()
-    {
-        Vector3 eye = transform.position + Vector3.up * 1.6f;
-        Vector3 dir = (player.position - eye).normalized;
-        float dist = Vector3.Distance(transform.position, player.position);
-
-        if (dist > viewDistance)
-        {
-            playerDetected = false;
-            return;
-        }
-
-        if (Vector3.Angle(transform.forward, dir) > viewAngle * 0.5f)
-        {
-            playerDetected = false;
-            return;
-        }
-
-        if (Physics.Raycast(eye, dir, out RaycastHit hit, viewDistance, visionMask) &&
-    hit.collider.CompareTag("Player") &&
-    !Physics.Raycast(eye, dir, dist, obstacleMask))
 {
-    Debug.Log("Vi o player!");
-    Debug.Log("Raycast acertou: " + hit.collider.name);
+    Vector3 eye = transform.position + Vector3.up * 1.6f;
+    Vector3 dir = (player.position - eye).normalized;
+    float dist = Vector3.Distance(transform.position, player.position);
 
-    lastSeenPos = player.position;
-    state = State.Chase;
+    Debug.DrawRay(eye, dir * viewDistance, Color.red);
+
+    if (dist > viewDistance)
+    {
+        playerDetected = false;
+        return;
+    }
+
+    if (Vector3.Angle(transform.forward, dir) > viewAngle * 0.5f)
+    {
+        playerDetected = false;
+        return;
+    }
+
+    RaycastHit hit;
+
+    if (Physics.Raycast(eye, dir, out hit, viewDistance, visionMask))
+    {
+        Debug.Log("Raycast acertou: " + hit.collider.name + " | Tag: " + hit.collider.tag);
+
+        if (hit.collider.CompareTag("Player") &&
+            !Physics.Raycast(eye, dir, dist, obstacleMask))
+        {
+            Debug.Log("VI O PLAYER!");
+
+            lastSeenPos = player.position;
+            state = State.Chase;
+
+            if (!playerDetected && detectionSound != null)
+                detectionSound.Play();
 
             playerDetected = true;
         }
@@ -127,6 +136,13 @@ public class EnemyAI : MonoBehaviour
         {
             playerDetected = false;
         }
+    }
+    else
+    {
+        Debug.Log("Raycast não acertou nada.");
+        playerDetected = false;
+    }
+
     }
 
     public void HearNoise(Vector3 pos)
