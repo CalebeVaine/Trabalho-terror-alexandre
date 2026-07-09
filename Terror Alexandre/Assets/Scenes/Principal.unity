@@ -36844,6 +36844,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1523757570}
   m_SourcePrefab: {fileID: 100100000, guid: 411531eb87ac2564f902652c9e578164, type: 3}
+--- !u!114 &1371546330 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2265680343325855196, guid: 411531eb87ac2564f902652c9e578164, type: 3}
+  m_PrefabInstance: {fileID: 1371546329}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1523757561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55919ac34a26952479f3fc91f777b2fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1373006276
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -49811,7 +49822,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::JumpscareController
   playerCamera: {fileID: 1833630391}
   playerScripts:
-  - {fileID: 0}
+  - {fileID: 1371546330}
   enemy: {fileID: 1197168988}
   enemyAI: {fileID: 1197168996}
   headTarget: {fileID: 694338415}

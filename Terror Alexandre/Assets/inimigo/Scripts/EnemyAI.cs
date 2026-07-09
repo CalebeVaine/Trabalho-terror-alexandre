@@ -68,20 +68,22 @@ public class EnemyAI : MonoBehaviour
     void ActivateAI() => active = true;
 
     void Update()
+{
+    Debug.Log(state);
+
+    if (!active || jumpscareTriggered) return;
+
+    UpdateFootsteps();
+    DetectPlayer();
+
+    switch (state)
     {
-        if (!active || jumpscareTriggered) return;
-
-        UpdateFootsteps();
-        DetectPlayer();
-
-        switch (state)
-        {
-            case State.Patrol: Patrol(); break;
-            case State.Chase: Chase(); break;
-            case State.Investigate: Investigate(); break;
-            case State.Search: Search(); break;
-        }
+        case State.Patrol: Patrol(); break;
+        case State.Chase: Chase(); break;
+        case State.Investigate: Investigate(); break;
+        case State.Search: Search(); break;
     }
+}
 
     void UpdateFootsteps()
     {
@@ -110,17 +112,14 @@ public class EnemyAI : MonoBehaviour
         }
 
         if (Physics.Raycast(eye, dir, out RaycastHit hit, viewDistance, visionMask) &&
-            hit.collider.CompareTag("Player") &&
-            !Physics.Raycast(eye, dir, dist, obstacleMask))
-        {
-            lastSeenPos = player.position;
-            state = State.Chase;
+    hit.collider.CompareTag("Player") &&
+    !Physics.Raycast(eye, dir, dist, obstacleMask))
+{
+    Debug.Log("Vi o player!");
+    Debug.Log("Raycast acertou: " + hit.collider.name);
 
-            // Toca o som apenas quando detectar o jogador pela primeira vez
-            if (!playerDetected && detectionSound)
-            {
-                detectionSound.Play();
-            }
+    lastSeenPos = player.position;
+    state = State.Chase;
 
             playerDetected = true;
         }
@@ -164,25 +163,29 @@ public class EnemyAI : MonoBehaviour
     }
 
     void Chase()
+{
+    agent.speed = chaseSpeed;
+
+    float dist = Vector3.Distance(transform.position, player.position);
+
+    Debug.Log("Distância até o player: " + dist);
+
+    if (dist <= stopDistance)
     {
-        agent.speed = chaseSpeed;
+        Debug.Log("ENCOSTOU NO PLAYER");
 
-        float dist = Vector3.Distance(transform.position, player.position);
-
-        if (dist <= stopDistance)
-        {
-            jumpscareTriggered = true;
-            agent.enabled = false;
-            jumpscare.TriggerJumpscare();
-            return;
-        }
-
-        agent.SetDestination(player.position);
-        lastSeenPos = player.position;
-
-        if (dist > viewDistance * 1.3f)
-            state = State.Investigate;
+        jumpscareTriggered = true;
+        agent.enabled = false;
+        jumpscare.TriggerJumpscare();
+        return;
     }
+
+    agent.SetDestination(player.position);
+    lastSeenPos = player.position;
+
+    if (dist > viewDistance * 1.3f)
+        state = State.Investigate;
+}
 
     void Investigate()
     {

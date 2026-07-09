@@ -42,12 +42,18 @@ public class JumpscareController : MonoBehaviour
 
     public void TriggerJumpscare()
     {
+        Debug.Log("Jumpscare iniciado!");
         triggered = true;
         lockCamera = true;
+        Debug.Log("Scripts encontrados: " + playerScripts.Length);
 
         foreach (var script in playerScripts)
-            if (script) script.enabled = false;
+{
+    Debug.Log(script);
 
+    if (script)
+        script.enabled = false;
+}
         if (enemyAI) enemyAI.enabled = false;
 
         Vector3 pos = playerCamera.position + playerCamera.forward * distanceFromCamera;
@@ -55,6 +61,7 @@ public class JumpscareController : MonoBehaviour
 
         enemy.transform.position = pos;
         enemy.transform.LookAt(playerCamera);
+        Debug.Log("Inimigo reposicionado.");
 
         if (sound) sound.Play();
 
