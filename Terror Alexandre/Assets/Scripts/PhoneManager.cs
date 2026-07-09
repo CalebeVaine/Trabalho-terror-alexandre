@@ -5,8 +5,6 @@ public class PhoneManager : MonoBehaviour
 {
     public static PhoneManager Instance;
 
-    [SerializeField] private GameObject enemy;
-
     [Header("Scene")]
     public GameObject objectToDisable;
 
@@ -77,9 +75,6 @@ public class PhoneManager : MonoBehaviour
 
         if (objectToDisable != null)
             objectToDisable.SetActive(false);
-
-        if (enemy != null)
-            enemy.SetActive(true);
 
         if (SubtitleManager.Instance != null)
             SubtitleManager.Instance.ShowSubtitle("RUN!", 4f);
