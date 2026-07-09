@@ -5,6 +5,8 @@ public class PhoneManager : MonoBehaviour
 {
     public static PhoneManager Instance;
     [SerializeField] private GameObject enemy;
+    [Header("Scene")]
+public GameObject objectToDisable;
 
     [Header("Phones")]
     public PhoneInteraction[] phones;
@@ -62,21 +64,24 @@ public class PhoneManager : MonoBehaviour
 
     private IEnumerator StartNextPhone(float voiceDuration)
     {
-        yield return new WaitForSeconds(voiceDuration + 10f);
+        yield return new WaitForSeconds(voiceDuration + 2f);
 
         StartPhone(currentPhone);
     }
 
     private IEnumerator LastEvent()
-    {
-        AmbientManager.Instance.SwitchToDanger();
+{
+    AmbientManager.Instance.SwitchToDanger();
 
-        if (enemy != null)
-            enemy.SetActive(true);
+    if (objectToDisable != null)
+        objectToDisable.SetActive(false);
 
-        yield return new WaitForSeconds(8f);
+    if (enemy != null)
+        enemy.SetActive(true);
 
-        if (jumpscareAudio != null)
-            jumpscareAudio.Play();
-    }
+    yield return new WaitForSeconds(8f);
+
+    if (jumpscareAudio != null)
+        jumpscareAudio.Play();
+}
 }
