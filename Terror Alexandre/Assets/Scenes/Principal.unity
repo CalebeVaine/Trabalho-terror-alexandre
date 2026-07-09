@@ -19795,6 +19795,60 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.11282587, y: 5.3509903, z: 3.8021073e-14}
   m_Center: {x: -7.483206, y: 22.754416, z: 13.16564}
+--- !u!1 &401081418
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 401081420}
+  - component: {fileID: 401081419}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &401081419
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401081418}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.5246582, y: 1, z: 0.40354156}
+  m_Center: {x: -0.2762909, y: 0, z: 0.29822922}
+--- !u!4 &401081420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 401081418}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -247.199, y: 14.37142, z: 73.52552}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1832576606}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &401526201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37034,7 +37088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1677792748992628352, guid: cff02aa4ebfa45a47a9b85f2f8b109a1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 74.02
+      value: 73.885
       objectReference: {fileID: 0}
     - target: {fileID: 1677792748992628352, guid: cff02aa4ebfa45a47a9b85f2f8b109a1, type: 3}
       propertyPath: m_LocalRotation.w
@@ -42858,8 +42912,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -48.7193, y: -64.26984}
-  m_SizeDelta: {x: 967.3342, y: 795.3443}
+  m_AnchoredPosition: {x: 22.9033, y: -64.26984}
+  m_SizeDelta: {x: 1636.8987, y: 795.3443}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650046421
 MonoBehaviour:
@@ -46256,6 +46310,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.7395458, y: 1.8418798, z: 1.30873434e-14}
   m_Center: {x: 4.577097, y: 16.68812, z: 3.607611}
+--- !u!1 &1832576605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1832576606}
+  - component: {fileID: 1832576607}
+  m_Layer: 0
+  m_Name: VictoryTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1832576606
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832576605}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.000824, y: -1.2358198, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 401081420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1832576607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832576605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec906b11877ab7f4692a0d3149822354, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::VictoryTrigger
+  victoryPanel: {fileID: 1382814057}
+  playerScripts: []
 --- !u!4 &1833630391 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5147502021882513276, guid: 411531eb87ac2564f902652c9e578164, type: 3}
@@ -52264,3 +52364,4 @@ SceneRoots:
   - {fileID: 114962483}
   - {fileID: 1371546329}
   - {fileID: 918284780}
+  - {fileID: 401081420}
