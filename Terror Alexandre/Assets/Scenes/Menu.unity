@@ -9603,7 +9603,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &623264810
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17002,7 +17002,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Inspira\xE7\xE3o\n"
+  m_text: "Inspira\xE7\xE3o em Piggy de MiniToon\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3970e22d13d43b745b453e76fd853b91, type: 2}
   m_sharedMaterial: {fileID: 1422210940191436802, guid: 3970e22d13d43b745b453e76fd853b91, type: 2}
@@ -23400,7 +23400,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ajudou no Volume (grafico):
+  m_text: 'Ajudou no Global Volume (grafico):
 
     Gabriel Djones'
   m_isRightToLeft: 0

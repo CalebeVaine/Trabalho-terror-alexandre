@@ -4,9 +4,11 @@ using UnityEngine;
 public class PhoneManager : MonoBehaviour
 {
     public static PhoneManager Instance;
+
     [SerializeField] private GameObject enemy;
+
     [Header("Scene")]
-public GameObject objectToDisable;
+    public GameObject objectToDisable;
 
     [Header("Phones")]
     public PhoneInteraction[] phones;
@@ -70,18 +72,21 @@ public GameObject objectToDisable;
     }
 
     private IEnumerator LastEvent()
-{
-    AmbientManager.Instance.SwitchToDanger();
+    {
+        AmbientManager.Instance.SwitchToDanger();
 
-    if (objectToDisable != null)
-        objectToDisable.SetActive(false);
+        if (objectToDisable != null)
+            objectToDisable.SetActive(false);
 
-    if (enemy != null)
-        enemy.SetActive(true);
+        if (enemy != null)
+            enemy.SetActive(true);
 
-    yield return new WaitForSeconds(8f);
+        if (SubtitleManager.Instance != null)
+            SubtitleManager.Instance.ShowSubtitle("RUN!", 4f);
 
-    if (jumpscareAudio != null)
-        jumpscareAudio.Play();
-}
+        yield return new WaitForSeconds(8f);
+
+        if (jumpscareAudio != null)
+            jumpscareAudio.Play();
+    }
 }
