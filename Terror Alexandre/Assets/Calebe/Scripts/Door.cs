@@ -4,6 +4,12 @@ public class Door : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private Transform doorModel;
+    [Header("Audio")]
+[SerializeField] private AudioSource audioSource;
+[SerializeField] private AudioClip openSound;
+[SerializeField] private AudioClip closeSound;
+[SerializeField] private AudioClip lockedSound;
+[SerializeField] private AudioClip unlockSound;
 
     [Header("Settings")]
     [SerializeField] private bool locked = true;
@@ -46,27 +52,42 @@ public class Door : MonoBehaviour
     }
 
     private void TryInteract()
+{
+    Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+
+    if (!Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
+        return;
+
+    if (hit.transform != doorModel)
+        return;
+
+    if (locked)
     {
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-
-        if (!Physics.Raycast(ray, out RaycastHit hit, interactionDistance))
-            return;
-
-        if (hit.transform != doorModel)
-            return;
-
-        if (locked)
+        if (inventory == null || !inventory.HasKey)
         {
-            if (inventory == null || !inventory.HasKey)
-            {
-                Debug.Log("A porta está trancada.");
-                return;
-            }
+            Debug.Log("A porta estÃ¡ trancada.");
 
-            locked = false;
-            Debug.Log("Você destrancou a porta.");
+            if (audioSource && lockedSound)
+                audioSource.PlayOneShot(lockedSound);
+
+            return;
         }
 
-        isOpen = !isOpen;
+        locked = false;
+        Debug.Log("VocÃª destrancou a porta.");
+
+        if (audioSource && unlockSound)
+            audioSource.PlayOneShot(unlockSound);
     }
+
+    isOpen = !isOpen;
+
+    if (audioSource)
+    {
+        if (isOpen && openSound)
+            audioSource.PlayOneShot(openSound);
+        else if (!isOpen && closeSound)
+            audioSource.PlayOneShot(closeSound);
+    }
+}
 }

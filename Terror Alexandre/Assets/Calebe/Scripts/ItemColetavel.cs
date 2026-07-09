@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class ItemColetavel : MonoBehaviour
 {
+    public AudioClip pickupSound;
+
     public void Coletar()
     {
         PlayerInventory inventory = FindFirstObjectByType<PlayerInventory>();
@@ -9,7 +11,11 @@ public class ItemColetavel : MonoBehaviour
         if (inventory != null)
         {
             inventory.AddKey();
-            Destroy(gameObject);
+
+            if (pickupSound != null)
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position);
+
+            Destroy(gameObject, pickupSound != null ? pickupSound.length : 0f);
         }
     }
 }
