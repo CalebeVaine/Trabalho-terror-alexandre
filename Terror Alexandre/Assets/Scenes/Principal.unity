@@ -41448,7 +41448,7 @@ GameObject:
   - component: {fileID: 1564615569}
   - component: {fileID: 1564615568}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: Derrota
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

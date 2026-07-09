@@ -16066,6 +16066,7 @@ GameObject:
   - component: {fileID: 1061366698}
   - component: {fileID: 1061366697}
   - component: {fileID: 1061366700}
+  - component: {fileID: 1061366701}
   m_Layer: 5
   m_Name: quit
   m_TagString: Untagged
@@ -16136,7 +16137,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1061366698}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1061366701}
+        m_TargetAssemblyTypeName: QuitGame, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1061366698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16189,6 +16202,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ButtonHoverScale
   hoverScale: 1.2
   animationSpeed: 10
+--- !u!114 &1061366701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061366695}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e592bb8b93cc44e9a74b78a3092566, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitGame
 --- !u!65 &1061826258
 BoxCollider:
   m_ObjectHideFlags: 0
